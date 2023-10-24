@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename= 'css/style.css')}}"> -->
+
+</head>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">Ma Librairie.com </li>
+            <div class=" items">
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">Librairie</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">S'inscrire</a></li>
+            </div>
+            <li class="search-icon">
+                <input type="search" placeholder="search">
+               <label class="icon">
+                <span class="fas fa-search"></span>
+               </label>
+            </li>
+        </ul>
+    </nav>
+               <!-- message de binvenue -->
+    <div class="content">
+        <h1>Bienvenue <br><span>sur</span> <br>Ma Librairie.com </h1>
+        <p class="par">Ma Librairie.com est un site de vente et achats de livre basé <br>
+        sur les model de cuisine les tendance au plus encienne,<br>nous vous offront une game de produit que vous ne regreterer pas </p>
+
+        <button class="cn"><a href="#">JOIN US</a></button>
+    </div> 
+    
+    <!-- creation d'un login -->
+
+    <div class="form">
+        <h2>se connectez</h2>
+        <input type="email" name="email" placeholder="entré Email">
+        <input type="Mot de passe" name="Mot de passe" placeholder="entré mot de passe">
+        <button class="login"><a href="#">connexion</a></button>
+
+        <p class="link">pas de compte ?</p>
+        <a href="#">crée en un ici</a>
+        <p class="liw"></p>
+    </div>
+
+    <!-- les livres -->
+    <div class="gallery-wrap">
+        <img src="img/44897.png" id="backBtn">
+        <div class="gallery">
+            <div>
+                <span><img src="img/D1906_C1_NoCUP_HR.jpg" alt=""></span>
+                <span><img src="img/D1906_C1_NoCUP_HR.jpg" alt=""></span>
+                <span><img src="img/D1906_C1_NoCUP_HR.jpg" alt=""></span>
+            </div>
+            <div>   
+               <span><img src="img/ID0804_C1_HR_NO_CUP.jpg" alt=""></span>
+               <span><img src="img/ID0804_C1_HR_NO_CUP.jpg" alt=""></span>
+               <span><img src="img/ID0804_C1_HR_NO_CUP.jpg" alt=""></span>
+            </div>
+        </div> 
+        <img src="img/jumeau.png" id="nextBtn">
+    </div>
+    <script>
+        let scrollContainer = document.querySelector(".gallery")
+        let backBtn = document.getElementById("backBtn")
+        let nextBtn = document.getElementById("nextBtn")
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "auto";
+
+        });
+
+        nextBtn.addEventListener("click", () =>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft += 900;
+        });
+
+        backBtn.addEventListener("click", () =>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= 900;
+        });
+    </script>   
+</body> 
+</html>
